@@ -10,12 +10,25 @@ function getHumanChoice() {
 
 function getComputerChoice() {
     options = ["rock", "paper", "scissors"];
-    // 1) Use Math.random() to generate a random number from 0 to < 1.
-    // 2) Scale it to the range from 0 to < 3 by multiplying by array length.
-    // 3) Round the number with Math.floor() to get 0, 1 or 2.
-    // 4) Use this number as an array index to get an element.
     const randomIndex = Math.floor(Math.random() * options.length);
     return options[randomIndex];
+}
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice === computerChoice) {
+        alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nTie!`);
+    }
+    else if (humanChoice === "rock" && computerChoice === "scissors" ||
+            humanChoice === "paper" && computerChoice === "rock" ||
+            humanChoice === "scissors" && computerChoice === "paper") {
+                humanScore++;
+                alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nYou win this round: ${humanChoice} beats ${computerChoice}!`);
+    } else {
+        computerScore++;
+        alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nComputer wins this round: ${computerChoice} beats ${humanChoice}.`);
+    }
 }
 
 // A dialog window appears
@@ -27,5 +40,5 @@ console.log("The user has chosen " + humanChoice);
 computerChoice = getComputerChoice();
 console.log("The computer has chosen " + computerChoice);
 
-//Both choices are compared to determine the winner
-//Another dialog window appears, displaying the results of the game
+// Both choices are compared to determine the winner
+playRound(humanChoice, computerChoice);
