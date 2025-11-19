@@ -1,5 +1,7 @@
 let humanChoice;
 let computerChoice;
+let humanScore = 0;
+let computerScore = 0;
 
 function getHumanChoice() {
     humanChoice = prompt("Enter rock, paper, or scissors:");
@@ -25,5 +27,5 @@ console.log("The user has chosen " + humanChoice);
 computerChoice = getComputerChoice();
 console.log("The computer has chosen " + computerChoice);
 
-//Both answers are compared to determine the winner
+//Both choices are compared to determine the winner
 //Another dialog window appears, displaying the results of the game
