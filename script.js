@@ -15,20 +15,27 @@ function getComputerChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    let messageRoundResult = ``;
+    let messageScore = ``;
     humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
-        alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nTie!`);
+        messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nIt's a tie!`;
     }
     else if (humanChoice === "rock" && computerChoice === "scissors" ||
             humanChoice === "paper" && computerChoice === "rock" ||
             humanChoice === "scissors" && computerChoice === "paper") {
                 humanScore++;
-                alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nYou win this round: ${humanChoice} beats ${computerChoice}!`);
+                messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nYou win this round - ${humanChoice} beats ${computerChoice}!`;
     } else {
         computerScore++;
-        alert(`Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nComputer wins this round: ${computerChoice} beats ${humanChoice}.`);
+        messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nComputer wins this round - ${computerChoice} beats ${humanChoice}.`;
     }
+
+    messageScore = `\n\nScore:\nYou - ${humanScore}\nComputer - ${computerScore}`;
+    messageRoundResult = messageRoundResult + messageScore;
+
+    alert(messageRoundResult);
 }
 
 // A dialog window appears
