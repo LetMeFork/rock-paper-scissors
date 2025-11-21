@@ -1,4 +1,6 @@
 # Rock Paper Scissors
-Classical game implemented in minimalistic way (no GUI).
+Classical __Rock Paper Scissors__ game implemented in minimalistic way (no GUI).
+
+The game plays 5 rounds.
 
 It is assumed that the user always enters a correct choice (“rock”, “paper” or “scissors”), so no reprompting for an invalid input is implemented.
