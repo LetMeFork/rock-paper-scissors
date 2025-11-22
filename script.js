@@ -10,10 +10,11 @@ function getComputerChoice() {
     return options[randomIndex];
 }
 
-// Play N-rounds game
+// Code of the game for N rounds
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+    let messageFinal;
 
     // Code for one round
     function playRound(humanChoice, computerChoice) {
@@ -39,7 +40,7 @@ function playGame() {
         return messageRoundResult;
     }
 
-    // Initiate 5-round game
+    // Play 5-round game
     for (let round = 1; round <= 5; round++) {
         let messageRound = `ROUND ${round}\n\n`;
         let humanChoice = getHumanChoice().toLowerCase();
@@ -52,7 +53,18 @@ function playGame() {
         alert(messageRound);
     }
 
-    // After 5 rounds, define winner
+    // First part of the final message - scoring
+    messageFinal = `Scores:\nYou: ${humanScore}\nComputer: ${computerScore}\n\n`;
+    // Second part of the final message - winner declaration
+    if (humanScore > computerScore) {
+        messageFinal = messageFinal + "YOU WON THE GAME!";
+    } else if (computerScore > humanScore) {
+        messageFinal = messageFinal + "COMPUTER WON THE GAME!";
+    } else {
+        messageFinal = messageFinal + "TIE!";
+    }
+    // Output the final message
+    alert(messageFinal);
 }
 
 playGame();
