@@ -64,7 +64,7 @@ function playGame() {
         messageFinal = messageFinal + "TIE!";
     }
     // Output the final message
-    alert(messageFinal);
+    // alert(messageFinal);
 }
 
 playGame();
