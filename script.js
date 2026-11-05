@@ -41,17 +41,17 @@ function playGame() {
     }
 
     // Play 5-round game
-    for (let round = 1; round <= 5; round++) {
-        let messageRound = `ROUND ${round}\n\n`;
-        let humanChoice = getHumanChoice().toLowerCase();
-        let computerChoice = getComputerChoice();
+    // for (let round = 1; round <= 5; round++) {
+    //     let messageRound = `ROUND ${round}\n\n`;
+    //     let humanChoice = getHumanChoice().toLowerCase();
+    //     let computerChoice = getComputerChoice();
 
-        // Play one round, get results
-        let messageRoundResult = playRound(humanChoice, computerChoice);
-        // Output the overall round message
-        messageRound = messageRound + messageRoundResult;
-        alert(messageRound);
-    }
+    //     // Play one round, get results
+    //     let messageRoundResult = playRound(humanChoice, computerChoice);
+    //     // Output the overall round message
+    //     messageRound = messageRound + messageRoundResult;
+    //     alert(messageRound);
+    // }
 
     // First part of the final message - scoring
     messageFinal = `Scores:\nYou: ${humanScore}\nComputer: ${computerScore}\n\n`;
