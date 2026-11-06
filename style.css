@@ -21,4 +21,21 @@ body {
 }
 .button_section button {
     padding: 25px 50px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-size: 16px;
+    box-shadow: 0 0 50px 5px #bfbfbf;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#rock {
+  background-color: #b3b6b9;
+}
+#paper {
+  background-color: #ede0c4;
+}
+#scissors {
+  background-color: #c2c8d2;
 }
