@@ -33,9 +33,29 @@ body {
 #rock {
   background-color: #b3b6b9;
 }
+#rock:hover {
+  background-color: #d1d3d5;
+}
+#rock:active {
+  background-color: white;
+}
+
 #paper {
   background-color: #ede0c4;
 }
+#paper:hover {
+  background-color: #f4ecdb;
+}
+#paper:active {
+  background-color: white;
+}
+
 #scissors {
   background-color: #c2c8d2;
+}
+#scissors:hover {
+  background-color: #cdd2da;
+}
+#scissors:active {
+  background-color: white;
 }
