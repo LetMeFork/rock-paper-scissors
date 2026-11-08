@@ -1,6 +1,16 @@
+// Get links to the buttons
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+
+// Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked
+rock.addEventListener("click", () => getHumanChoice("rock"));
+paper.addEventListener("click", () => getHumanChoice("paper"));
+scissors.addEventListener("click", () => getHumanChoice("scissors"));
+
 // User inputs "rock", "paper", or "scissors"
-function getHumanChoice() {
-    return prompt("Enter rock, paper, or scissors:");
+function getHumanChoice(humanChoice) {
+    console.log(humanChoice);
 }
 
 // Computer randomly selects "rock", "paper", or "scissors"
