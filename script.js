@@ -3,21 +3,41 @@ const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 
-// Add an event listener to the buttons that call your playRound function with the correct playerSelection every time a button is clicked
-rock.addEventListener("click", () => getHumanChoice("rock"));
-paper.addEventListener("click", () => getHumanChoice("paper"));
-scissors.addEventListener("click", () => getHumanChoice("scissors"));
-
-// User inputs "rock", "paper", or "scissors"
-function getHumanChoice(humanChoice) {
-    console.log(humanChoice);
-}
+// Add an event listener to the buttons
+rock.addEventListener("click", () => playRound("rock"));
+paper.addEventListener("click", () => playRound("paper"));
+scissors.addEventListener("click", () => playRound("scissors"));
 
 // Computer randomly selects "rock", "paper", or "scissors"
 function getComputerChoice() {
-    options = ["rock", "paper", "scissors"];
-    const randomIndex = Math.floor(Math.random() * options.length);
-    return options[randomIndex];
+    const randomNum = Math.random();
+    if (randomNum < 1/3) return "rock";
+    if (randomNum < 2/3) return "paper";
+    return "scissors";
+}
+
+// Code for one round
+function playRound(humanChoice, computerChoice) {
+    computerChoice = getComputerChoice();
+    console.log(humanChoice, computerChoice);
+
+    // let messageRoundResult;
+    // let messageScore;
+    // if (humanChoice === computerChoice) {
+    //     messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nIt's a tie!`;
+    // }
+    // else if (humanChoice === "rock" && computerChoice === "scissors" ||
+    //         humanChoice === "paper" && computerChoice === "rock" ||
+    //         humanChoice === "scissors" && computerChoice === "paper") {
+    //             humanScore++;
+    //             messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nYou win this round - ${humanChoice} beat(s) ${computerChoice}!`;
+    // } else {
+    //     computerScore++;
+    //     messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nComputer wins this round - ${computerChoice} beat(s) ${humanChoice}!`;
+    // }
+    // messageScore = `\nYou: ${humanScore}\nComputer: ${computerScore}`;
+    // messageRoundResult = messageRoundResult + messageScore;
+    // return messageRoundResult;
 }
 
 // Code of the game for N rounds
@@ -25,30 +45,6 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let messageFinal;
-
-    // Code for one round
-    function playRound(humanChoice, computerChoice) {
-        let messageRoundResult;
-        let messageScore;
-
-        if (humanChoice === computerChoice) {
-            messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nIt's a tie!`;
-        }
-        else if (humanChoice === "rock" && computerChoice === "scissors" ||
-                humanChoice === "paper" && computerChoice === "rock" ||
-                humanChoice === "scissors" && computerChoice === "paper") {
-                    humanScore++;
-                    messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nYou win this round - ${humanChoice} beat(s) ${computerChoice}!`;
-        } else {
-            computerScore++;
-            messageRoundResult = `Your choice - ${humanChoice}\nComputer's choice - ${computerChoice}\n\nComputer wins this round - ${computerChoice} beat(s) ${humanChoice}!`;
-        }
-
-        messageScore = `\nYou: ${humanScore}\nComputer: ${computerScore}`;
-        messageRoundResult = messageRoundResult + messageScore;
-
-        return messageRoundResult;
-    }
 
     // Play 5-round game
     // for (let round = 1; round <= 5; round++) {
@@ -77,4 +73,4 @@ function playGame() {
     // alert(messageFinal);
 }
 
-playGame();
+// playGame();
