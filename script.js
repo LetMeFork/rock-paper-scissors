@@ -17,8 +17,8 @@ function getComputerChoice() {
 }
 
 // Code for one round
-function playRound(humanChoice, computerChoice) {
-    computerChoice = getComputerChoice();
+function playRound(humanChoice) {
+    const computerChoice = getComputerChoice();
     console.log(humanChoice, computerChoice);
 
     // let messageRoundResult;
